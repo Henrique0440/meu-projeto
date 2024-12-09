@@ -1,11 +1,11 @@
 {
   "name": "meu-projeto",
   "version": "1.0.0",
-  "description": "",
+  "description": "API para acessar o cardápio de rodinho",
   "main": "index.js",
   "type": "module",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node index.js"
   },
   "dependencies": {
     "mongodb": "^6.11.0"
