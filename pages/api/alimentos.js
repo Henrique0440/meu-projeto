@@ -1,10 +1,9 @@
-
 import { MongoClient, ServerApiVersion } from 'mongodb';
 
 export default async function handler(req, res) {
     const MONGO_URI = process.env.MONGO_URI;
 
-    const client = new MongoClient("mongodb+srv://henrique0440:HENRIQUE23122001@henrique0440.aglmo.mongodb.net/?retryWrites=true&w=majority&appName=Henrique0440", {
+    const client = new MongoClient(MONGO_URI, {
         serverApi: {
             version: ServerApiVersion.v1,
             strict: true,
