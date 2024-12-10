@@ -1,7 +1,15 @@
 import { MongoClient, ServerApiVersion } from 'mongodb';
+import dotenv from 'dotenv';
+
+dotenv.config(); // Carrega as variáveis de ambiente
+
+const MONGO_URI = process.env.MONGO_URI;
 
 export default async function handler(req, res) {
-    const MONGO_URI = process.env.MONGO_URI;
+    if (req.method !== 'GET') {
+        res.status(405).json({ message: 'Método não permitido' });
+        return;
+    }
 
     const client = new MongoClient(MONGO_URI, {
         serverApi: {
@@ -10,17 +18,14 @@ export default async function handler(req, res) {
             deprecationErrors: true,
         }
     });
+
     try {
         await client.connect();
-        // Send a ping to confirm a successful connection
-        const db = await client.db("cardapio_rodinho")
-        const collection = await db.collection("cardapio")
-
-        const documentos = await collection.find({}).limit(10).toArray();
-
+        const db = await client.db("cardapio_rodinho");
+        const collection = await db.collection("cardapio");
+        const documentos = await collection.find({}).toArray();
         res.status(200).json(documentos);
     } catch (error) {
-        console.error("Erro de conexão ou consulta:", error.message);
         res.status(500).json({ message: 'Erro ao conectar ao banco de dados', error: error.message });
     } finally {
         await client.close();
