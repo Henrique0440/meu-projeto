@@ -22,7 +22,9 @@ export default async function handler(req, res) {
     });
 
     try {
+        console.log("Tentando conectar ao MongoDB...");
         await client.connect();
+        console.log("Conexão com o MongoDB estabelecida.");
         const db = await client.db("cardapio_rodinho");
         const collection = await db.collection("cardapio");
         const documentos = await collection.find({}).toArray();
