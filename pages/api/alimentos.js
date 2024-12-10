@@ -20,6 +20,7 @@ export default async function handler(req, res) {
 
         res.status(200).json(documentos);
     } catch (error) {
+        console.error("Erro de conexão ou consulta:", error.message);
         res.status(500).json({ message: 'Erro ao conectar ao banco de dados', error: error.message });
     } finally {
         await client.close();
