@@ -27,7 +27,7 @@ export default async function handler(req, res) {
         console.log("Conexão com o MongoDB estabelecida.");
         const db = await client.db("cardapio_rodinho");
         const collection = await db.collection("cardapio");
-        const documentos = await collection.find({}).toArray();
+        const documentos = await collection.find({}).limit(100).toArray();
         res.status(200).json(documentos);
     } catch (error) {
         res.status(500).json({ message: 'Erro ao conectar ao banco de dados', error: error.message });
