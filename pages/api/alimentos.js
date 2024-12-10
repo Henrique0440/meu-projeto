@@ -3,9 +3,8 @@ import dotenv from 'dotenv';
 
 dotenv.config(); // Carrega as variáveis de ambiente
 
-const MONGO_URI = process.env.MONGO_URI;
-
 export default async function handler(req, res) {
+    const MONGO_URI = process.env.MONGO_URI;
     if (req.method !== 'GET') {
         res.status(405).json({ message: 'Método não permitido' });
         return;
