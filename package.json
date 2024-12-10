@@ -1,12 +1,16 @@
 {
   "name": "meu-projeto",
   "version": "1.0.0",
+  "description": "API para acessar o cardápio de rodinho",
+  "main": "index.js",
   "type": "module",
+  "scripts": {
+    "dev": "vercel dev"
+  },
   "dependencies": {
+    "dotenv": "^16.4.7",
     "mongodb": "^6.11.0"
   },
-  "scripts": {
-    "start": "next start",
-    "build": "next build" 
-  }
+  "author": "0440",
+  "license": "ISC"
 }
