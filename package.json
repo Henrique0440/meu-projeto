@@ -1,15 +1,11 @@
 {
   "name": "meu-projeto",
   "version": "1.0.0",
-  "description": "API para acessar o cardápio de rodinho",
-  "main": "index.js",
   "type": "module",
-  "scripts": {
-    "start": "node index.js"
-  },
   "dependencies": {
     "mongodb": "^6.11.0"
   },
-  "author": "0440",
-  "license": "ISC"
+  "scripts": {
+    "start": "next start"
+  }
 }
