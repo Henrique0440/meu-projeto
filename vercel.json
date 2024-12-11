@@ -11,5 +11,11 @@
       "src": "/api/alimentos",
       "dest": "/pages/api/alimentos.js"
     }
-  ]
+  ],
+        "headers": [
+        {
+          "key": "Access-Control-Allow-Origin",
+          "value": "*"
+        }
+      ]
 }
