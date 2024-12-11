@@ -1,9 +1,14 @@
-{
   "version": 2,
   "builds": [
     {
       "src": "pages/api/alimentos.js",
       "use": "@vercel/node"
+    }
+  ],
+  "routes": [
+    {
+      "src": "/api/alimentos",
+      "dest": "/pages/api/alimentos.js"
     }
   ]
 }
