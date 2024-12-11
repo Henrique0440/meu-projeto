@@ -4,7 +4,7 @@ import dotenv from 'dotenv';
 dotenv.config(); // Carrega as variáveis de ambiente
 
 export default async function handler(req, res) {
-            // Adicionar cabeçalhos CORS
+    // Adicionar cabeçalhos CORS
     res.setHeader('Access-Control-Allow-Origin', '*'); // Permite todas as origens
     res.setHeader('Access-Control-Allow-Methods', 'GET,POST,PUT,DELETE,OPTIONS'); // Métodos permitidos
     res.setHeader('Access-Control-Allow-Headers', 'Content-Type, Authorization'); // Cabeçalhos permitidos
